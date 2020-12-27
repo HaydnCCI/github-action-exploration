@@ -1,0 +1,9 @@
+setup.py
+awesomecode/__init__.py
+awesomecode/utils.py
+awesomecode.egg-info/PKG-INFO
+awesomecode.egg-info/SOURCES.txt
+awesomecode.egg-info/dependency_links.txt
+awesomecode.egg-info/entry_points.txt
+awesomecode.egg-info/requires.txt
+awesomecode.egg-info/top_level.txt
