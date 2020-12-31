@@ -6,7 +6,7 @@ setup(
     install_requires=[
         'pytest'
         , 'cython'
-        # , 'pandas'
+        , 'numpy'
         ],
     packages=find_packages(),
     entry_points={
