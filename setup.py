@@ -5,6 +5,7 @@ setup(
     version='1.0.0',
     install_requires=[
         'pytest'
+        , 'pandas'
         ],
     packages=find_packages(),
     entry_points={
