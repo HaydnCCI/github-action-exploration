@@ -24,8 +24,11 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@master
-      # Runs a single command using the runners shell
-      - name: GitHub Action for pytest
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Tests
         uses: cclauss/Github-Action-for-pytest@master
         with: 
-          args: python setup.py develop && pip install -r requirement.txt && pytest
+          args: python3 setup.py develop && python3 -m pytest
+      
+          
