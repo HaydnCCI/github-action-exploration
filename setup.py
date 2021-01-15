@@ -5,8 +5,8 @@ setup(
     version='1.0.0',
     install_requires=[
         'pytest'
-        , 'cython'
-        , 'numpy'
+        # , 'cython'
+        # , 'numpy'
         ],
     packages=find_packages(),
     entry_points={
