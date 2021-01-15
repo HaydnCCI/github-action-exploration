@@ -20,15 +20,25 @@ jobs:
     # The type of runner that the job will run on
     name: GitHub Action for pytest
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.8]
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v2
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: |
+          python -m pip install --upgrade pip
+          if [-f requirement.txt]; then pip install -r requirements.txt; fi
       - name: Tests
-        uses: cclauss/Github-Action-for-pytest@master
-        with: 
-          args: python3 setup.py develop && python3 -m pytest
+        run: python3 setup.py develop && python3 -m pytest
+        # uses: cclauss/Github-Action-for-pytest@v2
+        # with: 
+          # args: python3 setup.py develop && python3 -m pytest
       
           
